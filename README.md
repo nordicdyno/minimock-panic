@@ -65,14 +65,29 @@ FAIL
 
 
 # << 3.4.0 (latest) >> :
-## BUG RETURNS – NOT SO HOORAY :(
+## ALL IS OK
 === RUN   TestPanic
-    minipanic_test.go:13: fail
     getter_minimock.go:401: Expected call to GetterMock.Get2 at
-        github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic/minipanic_test.go:21
+        github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic/minipanic_test.go:15
 --- FAIL: TestPanic (0.00s)
-FAIL
-FAIL	github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic	0.324s
+panic: fail [recovered]
+	panic: fail
+
+goroutine 34 [running]:
+testing.tRunner.func1.2({0x1030ec180, 0x140001042b0})
+	testing/testing.go:1631 +0x1c4
+testing.tRunner.func1()
+	testing/testing.go:1634 +0x33c
+panic({0x1030ec180?, 0x140001042b0?})
+	runtime/panic.go:770 +0x124
+github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic.GetterCaller.Run({{0x103110b68?, 0x14000176000?}})
+	github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic/minipanic.go:18 +0x60
+github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic.TestPanic(0x14000126680)
+	github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic/minipanic_test.go:18 +0x9c
+testing.tRunner(0x14000126680, 0x10310f600)
+	testing/testing.go:1689 +0xec
+created by testing.(*T).Run in goroutine 1
+	testing/testing.go:1742 +0x318
+FAIL	github.com/nordicdyno/minimock-panic/fix-3.4.0/minipanic	0.301s
 FAIL
 ```
-
