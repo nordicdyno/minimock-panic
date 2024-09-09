@@ -23,7 +23,7 @@ popd > /dev/null
 
 echo ""; echo ""
 echo "# << 3.4.0 (latest) >> :"
-echo "## BUG RETURNS – NOT SO HOORAY :("
+echo "## ALL IS OK"
 pushd fix-3.4.0 > /dev/null
 go test -count=1 -v ./minipanic
 popd > /dev/null

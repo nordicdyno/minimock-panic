@@ -8,12 +8,6 @@ import (
 )
 
 func TestPanic(t *testing.T) {
-	defer func() {
-		if err := recover(); err != nil {
-			t.Error(err)
-		}
-	}()
-
 	mc := minimock.NewController(t)
 	getterMock := NewGetterMock(mc)
 
